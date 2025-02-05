@@ -138,4 +138,23 @@ class BumpMappedSurface(TexturedSurface):
         self.noise = OpenSimplex()  # Initialize the OpenSimplex noise generator
 ```
 ## My Scene
-scenes/JunjunXiong-261201887-NovelScene.json
+![261201887-JunjunXiong-Competition](https://github.com/user-attachments/assets/c8c04b93-d1b6-4849-8deb-916323468c9d)
+![AACheckerPlane](https://github.com/user-attachments/assets/a476638d-6faf-4b10-891f-d3275f5298e0)
+![BoxRGBLights](https://github.com/user-attachments/assets/7f8290a3-0226-45fd-bde1-a452f6c09c76)
+![BoxStacks](https://github.com/user-attachments/assets/f5668c83-73fc-4612-9585-8b6766f27105)
+![BoxStacks_blurred](https://github.com/user-attachments/assets/0c174929-3951-4d47-9b63-0cdf8973cdc8)
+![Plane](https://github.com/user-attachments/assets/4490f91d-7af6-4022-b32b-05253ff0e3df)
+![Plane2](https://github.com/user-attachments/assets/13d24648-5562-41a9-9f13-93c2d2ad83ed)
+![Sphere](https://github.com/user-attachments/assets/28c095aa-0c45-4877-8a4c-25a5f278736c)
+**![TorusMesh](https://github.com/user-attachments/assets/fac26ee1-e308-49ae-ba27-bc79f7dc4373)
+![TwoSpheresPlane](https://github.com/user-attachments/assets/accc4022-052c-4318-9b3e-14e1ece8fb6d)
+
+**
+
+
+
+
+
+
+
+
