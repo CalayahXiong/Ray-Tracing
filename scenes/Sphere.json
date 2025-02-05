@@ -1,0 +1,39 @@
+{
+    "resolution": [512, 700],
+    "AA_jitter": false, 
+    "AA_samples": 1,
+    "ambient": [0.1, 0.1, 0.1],
+    "camera": {
+        "position": [0.0, 0.0, 8.0],
+        "lookAt": [0.0, 0.0, 0.0],
+        "up": [0.0, 1.0, 0.0],
+        "fov": 45.0       
+    },
+    "materials": [
+        {
+            "name": "red", 
+            "diffuse": [1.0, 0.0, 0.0], 
+            "specular": [0.8, 0.8, 0.8],
+            "shininess": 32
+        }
+    ],    
+    "objects": [
+        {
+            "name": "sphere1", 
+            "type": "sphere",
+            "radius": 1.0, 
+            "position": [0.0, 0.0, 0.0],
+            "materials": ["red"]
+        }        
+    ],
+    "lights": [
+        {
+            "name": "light",
+            "type": "point",
+            "position": [0.0, 5.0, 5.0],
+            "colour": [1.0, 1.0, 1.0],
+            "power": 1.0,
+            "attenuation": [0.0, 0.0, 1.0]
+        }
+    ]
+}

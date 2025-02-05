@@ -1,0 +1,35 @@
+{
+    "resolution": [160, 120],
+    "AA_jitter": false, 
+    "AA_samples": 1,
+    "ambient": [1,1,1],
+    "camera": {
+        "position": [0.0, 2.0, 20.0],
+        "lookAt": [0.0, 0.0, 0.0],
+        "up": [0.0, 1.0, 0.0],
+        "fov": 45.0       
+    },
+    "materials": [
+        {
+            "name": "green", 
+            "diffuse": [0.0, 1.0, 0.0], 
+            "specular": [0, 0, 0],
+            "shininess": 0
+        },
+        {
+            "name": "red",  
+            "diffuse": [1.0, 0.0, 0.0], 
+            "specular": [0, 0, 0],
+            "shininess": 0
+        }
+    ],    
+    "objects": [
+        {
+            "name": "plane", 
+            "type": "plane",
+            "normal": [0.0, 1.0, 0.0],
+            "position": [0.0, 0.0, 0.0],
+            "materials": ["red", "green"]
+        }
+    ]
+}

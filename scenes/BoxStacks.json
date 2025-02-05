@@ -1,0 +1,156 @@
+{
+    "resolution": [512, 512],
+    "AA_jitter": false, 
+    "AA_samples": 4,
+    "ambient": [0.1, 0.1, 0.1],
+    "camera": {
+        "position": [6.0, 10.0, 15.0],
+        "lookAt": [0.0, 0.0, 0.0],
+        "up": [0.0, 1.0, 0.0],
+        "fov": 45.0
+    },
+    "materials": [
+        {
+            "name": "red",             
+            "diffuse": [1.0, 0.0, 0.0], 
+            "specular": [0.8, 0.8, 0.8],
+            "shininess": 32
+        },
+        {
+            "name": "green", 
+            "diffuse": [0.0, 1.0, 0.0], 
+            "specular": [0.8, 0.8, 0.8],
+            "shininess": 32
+        },
+        {
+            "name": "blue", 
+            "diffuse": [0.0, 0.0, 1.0], 
+            "specular": [0.8, 0.8, 0.9],
+            "shininess": 32
+        },
+        {
+            "name": "orange", 
+            "diffuse": [1.0, 0.5, 0.0], 
+            "specular": [0.8, 0.8, 0.9],
+            "shininess": 32
+        },
+        {
+            "name": "yellow", 
+            "diffuse": [1.0, 1.0, 0.0], 
+            "specular": [0.8, 0.8, 0.9],
+            "shininess": 32
+        }
+    ],
+    "objects": [
+        {
+            "name": "ground", 
+            "type": "plane",
+            "normal": [0.0, 1.0, 0.0],
+            "position": [0.0, 0.0, 0.0],
+            "materials": ["blue", "green"]
+        },
+        {
+            "name": "boxStack", 
+            "type": "node",
+            "position": [0.0, 0.0, 0.0], 
+            "rotation": [0.0, 30.0, 0.0], 
+            "scale": [1.0, 1.0, 1.0],
+            "children": [
+                {
+                    "name": "box1", 
+                    "type": "node",
+                    "rotation": [0.0, 0.0, 0.0], 
+                    "position": [0.0, 0.0, 0.0], 
+                    "scale": [1.0, 1.0, 1.0],
+                    "children": [
+                        {
+                            "name": "box1_geom", 
+                            "type": "box",
+                            "materials": ["red"], 
+                            "min": [-1, 0, -1], 
+                            "max": [1, 2, 1]
+                        },
+                        {
+                            "name": "box2", 
+                            "type": "node",
+                            "rotation": [0.0, 12.0, 0.0], 
+                            "position": [0.0, 2.0, 0.0], 
+                            "scale": [0.5, 0.5, 0.5],
+                            "children": [
+                                {
+                                    "name": "box2_geom", 
+                                    "type": "box",
+                                    "materials": ["orange"],  
+                                    "min": [-1, 0, -1], 
+                                    "max": [1, 2, 1]
+                                },
+                                {
+                                    "name": "box3", 
+                                    "type": "node",
+                                    "rotation": [0.0, -15.0, 0.0], 
+                                    "position": [0.0, 2.0, 0.2], 
+                                    "scale": [0.5, 0.5, 0.5],
+                                    "children": [
+                                        {
+                                            "name": "box3_geom", 
+                                            "type": "box",
+                                            "materials": ["yellow"], 
+                                            "min": [-1, 0, -1], 
+                                            "max": [1, 2, 1]
+                                        }
+                                    ]
+                                }                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },   
+        {
+            "name": "boxStack2", 
+            "type": "instance",
+            "position": [3.0, 0.0, -3.0], 
+            "rotation": [0.0, 24.0, 0.0], 
+            "ref": "boxStack"
+        },
+        {
+            "name": "boxStack3", 
+            "type": "instance",
+            "position": [3.0, 0.0, 3.0], 
+            "rotation": [0.0, 87.0, 0.0], 
+            "ref": "boxStack"
+        },
+        {
+            "name": "boxStack4", 
+            "type": "instance",
+            "position": [-3.0, 0.0, -3.0], 
+            "rotation": [0.0, 4.0, 0.0], 
+            "ref": "boxStack"
+        },
+        {
+            "name": "boxStack5", 
+            "type": "instance",
+            "position": [-3.0, 0.0, 3.0], 
+            "rotation": [0.0, 57.0, 0.0],
+            "ref": "boxStack"
+        }     
+    ],
+    "lights": [
+        {
+            "name": "light1", 
+            "type": "point",
+            "position": [-5.0, 5.0, 5.0], 
+            "colour": [1.0, 1.0, 1.0],
+            "power": 0.5,
+            "attenuation": [0.0, 0.0, 1.0]
+        },
+        {
+            "name": "light2", 
+            "type": "point",
+            "position": [5.0, 10.0, 5.0], 
+            "colour": [1.0, 1.0, 1.0],
+            "power": 0.9,
+            "attenuation": [0.0, 0.0, 1.0]
+        }
+    ]
+}

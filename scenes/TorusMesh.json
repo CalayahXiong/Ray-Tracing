@@ -1,0 +1,72 @@
+{
+    "resolution": [256, 256],
+    "AA_jitter": false, 
+    "AA_samples": 1,
+    "ambient": [0.1, 0.1, 0.1],
+    "camera": {
+        "position": [0.0, 4.0, 4.0],
+        "lookAt": [0.0, 0.0, 0.0],
+        "up": [0.0, 1.0, 0.0],
+        "fov": 45.0       
+    },
+    "materials": [
+        {
+            "name": "green",
+            "diffuse": [0.0, 1.0, 0.0], 
+            "specular": [0.5, 0.5, 0.5],
+            "shininess": 16
+        },
+        {
+            "name": "blue", 
+            "diffuse": [0.0, 0.0, 1.0], 
+            "specular": [0.5, 0.5, 0.5],
+            "shininess": 16
+        },
+        {
+            "name": "red", 
+            "diffuse": [1.0, 0.0, 0.0], 
+            "specular": [0.5, 0.5, 0.5],
+            "shininess": 16
+        }        
+    ],    
+    "objects": [
+        {
+            "name": "plane", 
+            "type": "plane",
+            "normal": [0.0, 1.0, 0.0], 
+            "position": [0.0, -1.0, 0.0],
+            "materials": ["blue", "green"]
+        },
+        {
+            "name": "torus", 
+            "type": "mesh",
+            "filepath": "./meshes/torus.obj",
+            "scale": 1.0, 
+            "position": [0.0, 0.0, 0.0],
+            "materials": ["red"]
+        }        
+    ],
+    "lights": [
+        {
+            "name": "light1",
+            "type": "point",
+            "position": [-3.0, 10.0, 1.0],
+            "colour": [1.0, 1.0, 1.0],
+            "power": 50
+        },
+        {
+            "name": "light2",
+            "type": "point",
+            "position": [3.0, 10.0, 1.0],
+            "colour": [1.0, 1.0, 1.0],
+            "power": 150
+        },
+        {
+            "name": "light3",
+            "type": "point",
+            "position": [0.0, -5.0, 0.0],
+            "colour": [1.0, 1.0, 1.0],
+            "power": 300
+        }
+    ]
+}

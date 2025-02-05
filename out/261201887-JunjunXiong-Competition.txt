@@ -1,0 +1,64 @@
+1. Title
+Me in a colourful black-or-white world
+
+2. Technical Achievements
+This scene incorporates a wide range of rendering techniques, including PBR, depth of field, anti-aliasing, and advanced lighting and material interactions (reflection, refraction).
+
+1)  Camera Setup
+Positioning and Orientation:
+    The camera is positioned at [0, 5, 15] and points towards [0, 0, 0] with an upward direction along the y-axis ([0, 1, 0]), which sets up a perspective view of the scene with proper alignment.
+Field of View:
+    The FOV is set to 60, offering a moderate camera angle for a balanced perspective without too much distortion.
+
+2) Resolution and Ambient Lighting
+Resolution:
+    The resolution of 1280 x 720 indicates the scene is set up for HD rendering, with a relatively high resolution for testing and previewing visual effects.
+Ambient Lighting:
+    The ambient light color [0.1, 0.1, 0.1] is a subtle low-intensity base lighting, ensuring that the scene is not too dark and can still exhibit details in shadowed areas.
+
+3) Anti-Aliasing (AA) with Jittering
+Jittered Sampling:
+    Anti-aliasing is enabled with AA_jitter: true, using 16 samples for jittered anti-aliasing. This reduces aliasing artifacts by sampling multiple rays per pixel, with slight random offsets, providing smoother transitions at pixel boundaries and more realistic rendering.
+
+4) Depth of Field
+Aperture and Focal Distance:
+    Depth of field is simulated by adjusting the camera's aperture (0.2) and focal distance (10.0), allowing for a blur effect on objects that are not at the focal point. This simulates the effect of a real camera lens, where objects closer or farther than the focal distance become progressively blurred.
+
+5) Material Properties
+Diffuse and Specular Reflection:
+    Materials include various diffuse and specular values, allowing for realistic reflections and surface interactions:
+        red_glossy: Reflective with high specularity (shininess: 32).
+        blue_transparent: Transparent with significant refraction (refraction: 0.9).
+        checkerboard: Simple diffuse material with no specular reflection (ideal for the floor).
+        gold: A shiny, reflective material with high specularity and a high reflection coefficient (reflection: 0.8).
+Reflection and Refraction:
+    Reflection is supported with materials like red_glossy and gold, contributing to mirror-like surfaces.
+    Refraction for blue_transparent simulates glass-like transparency and bending of light through the material, using a refraction index of 1.5 (for glass).
+
+7)  Lighting Setup
+Point Light (light1):
+    Positioned at [10, 10, 10] with a white light color, it mimics a distant light source (like the sun or a strong light bulb) with uniform intensity in all directions.
+Area Light (light2):
+    Positioned at [-5, 8, 5] with a soft white light, simulating an area light that produces softer, more diffused shadows. Its size ([3, 3, 0]) and number of samples (8) indicate a moderately sized light source producing soft shadows.
+
+8) Objects and Geometry
+Floor (plane):
+    A simple checkerboard pattern on a plane creates a visually interesting floor. It demonstrates texture mapping and also acts as a reflective surface for the surrounding objects.
+Red Sphere (sphere):
+    A glossy red sphere is positioned at [-3, 1, -2], showcasing reflective properties and material interaction with the light. The sphere’s reflective surface will interact with the lighting and the surrounding objects.
+Blue Ellipsoid (ellipsoid):
+    Positioned at [2, 1, 2] with radii [1.5, 1, 2], this object demonstrates ellipsoidal geometry and refraction. Its transparent material will bend light, creating realistic light distortion.
+Gold Cylinder (cylinder):
+    A cylinder with a shiny gold material placed vertically from [-1.5, -1, 1.5], demonstrating cylinder geometry and reflective materials. The cylinder's interaction with light sources will produce reflective highlights.
+Mirror Box (box):
+    A box with reflective gold material at [-1.5, -1, -1.5]. This object demonstrates simple box geometry and reflection, reflecting the surroundings, including other objects in the scene.
+
+9) Visual Effects and Interactions
+Shadows: The area light and point light will cast soft and hard shadows, respectively. The interplay of these light sources with the reflective and refractive surfaces will demonstrate accurate light behavior, especially in the presence of complex materials like glass (ellipsoid) and reflections (gold cylinder, red sphere).
+Reflections and Refractions: The scene will display reflections from the red_glossy and gold materials, and refractions from the blue_transparent material, showing how light behaves when interacting with both reflective and transparent surfaces.
+Depth of Field: The depth of field effect will blur objects that are closer or farther from the focal point of the camera, adding realism to the scene. This effect is often used in photography and cinema for artistic purposes and realism.
+
+3. Artistic Motivations:
+The main part is to show the most techniques achieved in this project
+The arrangement of objects creates a visually balanced composition, with the red sphere on the left counterbalanced by the white cube on the right.
+The smaller, more detailed shapes (e.g., the vase and cone) provide variety without overwhelming the scene.

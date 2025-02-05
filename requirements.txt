@@ -1,0 +1,5 @@
+numpy==1.26.4
+PyGLM==2.7.3
+tqdm==4.67.0
+libigl==2.5.1
+matplotlib==3.9.2

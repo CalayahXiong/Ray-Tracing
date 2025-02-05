@@ -1,0 +1,116 @@
+{
+    "resolution": [1280, 720],
+    "AA_jitter": true,
+    "AA_samples": 16,
+    "ambient": [0.15, 0.15, 0.2],
+    "camera": {
+        "position": [0.0, 2.0, 5.0],
+        "lookAt": [0.0, 1.0, -5.0],
+        "up": [0.0, 1.0, 0.0],
+        "fov": 60.0
+    },
+    "materials": [
+        {
+            "name": "Reflective Gold",
+            "diffuse": [0.9, 0.7, 0.3],
+            "specular": [1.0, 0.9, 0.8],
+            "shininess": 120,
+            "reflection": 0.9
+        },
+        {
+            "name": "Glass Emerald",
+            "diffuse": [0.0, 0.5, 0.3],
+            "specular": [0.6, 1.0, 0.7],
+            "shininess": 80,
+            "reflection": 0.2,
+            "refraction": 0.8,
+            "refraction_index": 1.4
+        },
+        {
+            "name": "Checkerboard Glam",
+            "diffuse": [0.8, 0.8, 0.8],
+            "specular": [0.0, 0.0, 0.0],
+            "shininess": 1,
+            "procedural": "checkerboard",
+            "primary_color": [0.1, 0.6, 0.8],
+            "secondary_color": [0.9, 0.2, 0.3],
+            "scale": [6.0, 6.0]
+        },
+        {
+            "name": "Textured Bronze",
+            "diffuse": [0.8, 0.5, 0.2],
+            "specular": [0.4, 0.3, 0.2],
+            "shininess": 50
+        },
+        {
+            "name": "Bumpy Sapphire",
+            "diffuse": [0.1, 0.2, 0.8],
+            "specular": [0.2, 0.3, 1.0],
+            "shininess": 25,
+            "bump_map": "simplex",
+            "bump_strength": 0.3
+        }
+    ],
+    "objects": [
+        {
+            "name": "Golden Sphere",
+            "type": "sphere",
+            "center": [0.0, 1.0, -5.0],
+            "radius": 1.0,
+            "materials": ["Reflective Gold"]
+        },
+        {
+            "name": "Emerald Glass Sphere",
+            "type": "sphere",
+            "center": [2.5, 1.0, -5.0],
+            "radius": 1.0,
+            "materials": ["Glass Emerald"]
+        },
+        {
+            "name": "Glam Checkerboard",
+            "type": "plane",
+            "normal": [0.0, 1.0, 0.0],
+            "position": [0.0, -1.0, 0.0],
+            "materials": ["Checkerboard Glam"]
+        },
+        {
+            "name": "Bronze Cube",
+            "type": "box",
+            "min": [-4.0, -1.0, -8.0],
+            "max": [-2.0, 1.0, -6.0],
+            "materials": ["Textured Bronze"]
+        },
+        {
+            "name": "Bumpy Sapphire Sphere",
+            "type": "sphere",
+            "center": [-2.5, 1.0, -5.0],
+            "radius": 1.0,
+            "materials": ["Bumpy Sapphire"]
+        }
+    ],
+    "lights": [
+        {
+            "name": "Warm Point Light",
+            "type": "point",
+            "position": [4.0, 5.0, -3.0],
+            "colour": [1.0, 0.8, 0.6],
+            "power": 1.0
+        },
+        {
+            "name": "Cool Area Light",
+            "type": "area",
+            "position": [-2.0, 10.0, -5.0],
+            "size": [3.0, 3.0, 0],
+            "colour": [0.4, 0.6, 1.0],
+            "power": 2.0
+        }
+    ],
+    "effects": {
+        "motion_blur": true,
+        "depth_of_field": {
+            "aperture": 0.01,
+            "focal_distance": 5.0
+        },
+        "path_tracing": true
+    }
+}

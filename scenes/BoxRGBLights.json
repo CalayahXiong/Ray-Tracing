@@ -1,0 +1,53 @@
+{
+    "resolution": [512, 512],
+    "AA_jitter": false, 
+    "AA_samples": 1,
+    "ambient": [0.1, 0.1, 0.1],
+    "camera": {
+        "position": [3.0, 3.0, 3.0],
+        "lookAt": [0.0, 0.0, 0.0],
+        "up": [0.0, 1.0, 0.0],
+        "fov": 45.0
+    },
+    "materials": [
+        {
+            "name": "mat1",
+            "diffuse": [1.0, 1.0, 1.0],
+            "specular": [0.0, 0.0, 0.0],
+            "shininess": 0
+        }
+    ],
+    "objects": [
+        {
+            "name": "box",
+            "type": "box",
+            "materials": ["mat1"]
+        }
+    ],
+    "lights": [
+        {
+            "name": "red", 
+            "type": "point",
+            "position": [0.0, 4.0, 0.0], 
+            "colour": [1.0, 0.0, 0.0],
+            "power": 0.8,
+            "attenuation": [0.0, 0.0, 1.0]
+        },
+        {
+            "name": "green", 
+            "type": "point",
+            "position": [0.0, 0.0, 4.0], 
+            "colour": [0.0, 1.0, 0.0],
+            "power": 0.8,
+            "attenuation": [0.0, 0.0, 1.0]
+        },
+        {
+            "name": "blue", 
+            "type": "point",
+            "position": [4.0, 0.0, 0.0], 
+            "colour": [0.0, 0.0, 1.0],
+            "power": 0.8,
+            "attenuation": [0.0, 0.0, 1.0]
+        }
+    ]
+}

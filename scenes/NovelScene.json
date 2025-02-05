@@ -1,0 +1,169 @@
+{
+    "camera": {
+        "position": [0, 8, 25],
+        "lookAt": [0, 2, 0],
+        "up": [0, 1, 0],
+        "fov": 50
+    },
+    "resolution": [1280, 720],
+    "ambient": [0.05, 0.05, 0.05],
+    "AA_jitter": true,
+    "AA_samples": 32,
+    "effects": {
+        "depth_of_field": {
+            "aperture": 0.3,
+            "focal_distance": 20.0
+        }
+    },
+    "materials": [
+        {
+            "name": "mirror",
+            "diffuse": [0.2, 0.2, 0.2],
+            "specular": [1.0, 1.0, 1.0],
+            "shininess": 128,
+            "reflection": 1.0
+        },
+        {
+            "name": "glass",
+            "diffuse": [0.2, 0.3, 0.4],
+            "specular": [0.9, 0.9, 0.9],
+            "shininess": 64,
+            "reflection": 0.2,
+            "refraction": 0.8,
+            "refraction_index": 1.5
+        },
+        {
+            "name": "gold",
+            "diffuse": [1.0, 0.8, 0.3],
+            "specular": [1.0, 1.0, 0.8],
+            "shininess": 96,
+            "reflection": 0.7
+        },
+        {
+            "name": "checkerboard",
+            "diffuse": [0.8, 0.8, 0.8],
+            "specular": [0.0, 0.0, 0.0],
+            "shininess": 0
+        },
+        {
+            "name": "red_diffuse",
+            "diffuse": [1.0, 0.2, 0.2],
+            "specular": [0.1, 0.1, 0.1],
+            "shininess": 8
+        },
+        {
+            "name": "blue_diffuse",
+            "diffuse": [0.2, 0.2, 1.0],
+            "specular": [0.1, 0.1, 0.1],
+            "shininess": 8
+        }
+    ],
+    "lights": [
+        {
+            "type": "point",
+            "name": "light1",
+            "colour": [1.0, 1.0, 1.0],
+            "position": [5, 10, 15]
+        },
+        {
+            "type": "area",
+            "name": "soft_light",
+            "colour": [0.6, 0.6, 0.8],
+            "position": [-10, 12, -5],
+            "size": [6, 6, 0],
+            "samples": 16
+        }
+    ],
+    "objects": [
+        {
+            "name": "ground_plane",
+            "type": "plane",
+            "materials": ["checkerboard"],
+            "position": [0, -1, 0],
+            "normal": [0, 1, 0]
+        },
+        {
+            "name": "glass_sphere",
+            "type": "sphere",
+            "materials": ["glass"],
+            "position": [-3, 2, 0],
+            "radius": 2
+        },
+        {
+            "name": "gold_cone",
+            "type": "cone",
+            "materials": ["gold"],
+            "apex": [3, 4, -5],
+            "base_center": [3, -1, -5],
+            "radius": 2
+        },
+        {
+            "name": "mirror_box",
+            "type": "box",
+            "materials": ["mirror"],
+            "min": [6, -1, 3],
+            "max": [10, 3, 7]
+        },
+        {
+            "name": "red_ellipsoid",
+            "type": "ellipsoid",
+            "materials": ["red_diffuse"],
+            "center": [-6, 2, 5],
+            "radii": [2, 1.5, 1]
+        },
+        {
+            "name": "blue_cylinder",
+            "type": "cylinder",
+            "materials": ["blue_diffuse"],
+            "base_center": [-3, -1, -7],
+            "top_center": [-3, 4, -7],
+            "radius": 1
+        },
+        {
+            "name": "node_with_children",
+            "type": "node",
+            "position": [0, 0, -10],
+            "rotation": [0, 30, 0],
+            "scale": [1, 1, 1],
+            "materials": [],
+            "children": [
+                {
+                    "name": "child_sphere",
+                    "type": "sphere",
+                    "materials": ["blue_diffuse"],
+                    "position": [0, 1, 0],
+                    "radius": 1
+                },
+                {
+                    "name": "child_cylinder",
+                    "type": "cylinder",
+                    "materials": ["gold"],
+                    "base_center": [0, 0, 0],
+                    "top_center": [0, 2, 0],
+                    "radius": 0.5
+                }
+            ]
+        },
+
+        {
+            "name": "csg_example",
+            "type": "csg",
+            "materials": ["glass"],
+            "operation": "union",
+            "left": {
+                "name": "csg_left_sphere",
+                "type": "sphere",
+                "materials": ["glass"],
+                "position": [-1, 1, -4],
+                "radius": 1
+            },
+            "right": {
+                "name": "csg_right_box",
+                "type": "box",
+                "materials": ["mirror"],
+                "min": [-1.5, -0.5, -4.5],
+                "max": [-0.5, 1.5, -3.5]
+            }
+        }
+    ]
+}
