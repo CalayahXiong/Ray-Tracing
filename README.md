@@ -1,7 +1,6 @@
-# COMP 557 Assignment 4: Ray Tracing
+# Ray Tracing
 
-JunjunXiong
-261201887
+ZoeXiong
 
 McGill University
 
